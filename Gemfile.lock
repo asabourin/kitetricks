@@ -65,6 +65,7 @@ GEM
     padrino-mailer (0.12.0.rc3)
       mail (~> 2.5.3)
       padrino-core (= 0.12.0.rc3)
+    padrino-multi-json (0.0.4)
     pg (0.17.1)
     polyglot (0.3.3)
     pry (0.9.12.6)
@@ -100,6 +101,7 @@ GEM
       polyglot (>= 0.3.1)
     url_mount (0.2.1)
       rack
+    yajl-ruby (1.2.0)
 
 PLATFORMS
   ruby
@@ -109,6 +111,7 @@ DEPENDENCIES
   minitest (~> 2.6.0)
   minitest-colorize
   padrino (= 0.12.0.rc3)
+  padrino-multi-json
   pg
   rack-test
   rake
@@ -116,3 +119,4 @@ DEPENDENCIES
   sass
   sequel
   slim
+  yajl-ruby

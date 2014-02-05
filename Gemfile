@@ -19,6 +19,7 @@ gem 'sass'
 gem 'slim'
 gem 'pg'
 gem 'sequel'
+gem 'yajl-ruby', :require => 'yajl/json_gem'
 
 # Test requirements
 gem 'minitest', '~>2.6.0', :require => 'minitest/autorun', :group => 'test'
@@ -29,6 +30,9 @@ gem 'rb-fsevent'
 
 # Padrino Stable Gem
 gem 'padrino', '0.12.0.rc3'
+
+# Padrino plugins
+gem 'padrino-multi-json'
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'

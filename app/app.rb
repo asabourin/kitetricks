@@ -4,6 +4,9 @@ module Kitetricks
     register Padrino::Rendering
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::MultiJson
+
+    MultiJson.use :yajl
 
     enable :sessions
 

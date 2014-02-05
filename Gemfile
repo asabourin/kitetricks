@@ -23,6 +23,9 @@ gem 'sequel'
 # Test requirements
 gem 'minitest', '~>2.6.0', :require => 'minitest/autorun', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
+gem 'minitest-colorize', :group => 'test'
+gem 'guard-minitest'
+gem 'rb-fsevent'
 
 # Padrino Stable Gem
 gem 'padrino', '0.12.0.rc3'

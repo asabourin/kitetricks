@@ -1,0 +1,9 @@
+---
+:orm: sequel
+:test: minitest
+:mock: none
+:script: none
+:renderer: slim
+:stylesheet: sass
+:namespace: Kitetricks
+:migration_format: number

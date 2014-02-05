@@ -31,6 +31,8 @@ Bundler.require(:default, RACK_ENV)
 #   include Padrino::Helpers::TranslationHelpers
 # end
 
+Sequel.default_timezone = :utc
+
 ##
 # Add your before (RE)load hooks here
 #

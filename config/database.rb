@@ -1,7 +1,7 @@
 Sequel::Model.plugin(:schema)
 Sequel::Model.raise_on_save_failure = false # Do not throw exceptions on failure
 Sequel::Model.db = case Padrino.env
-  when :development then Sequel.connect("postgres://localhost/kitetricks_development", :loggers => [logger])
-  when :production  then Sequel.connect("postgres://localhost/kitetricks_production",  :loggers => [logger])
+  when :development then Sequel.connect("postgres://localhost/kitetricks", :loggers => [logger])
+  when :production  then Sequel.connect(ENV['HEROKU_POSTGRESQL_BROWN_URL'],  :loggers => [logger])
   when :test        then Sequel.connect("postgres://localhost/kitetricks_test",        :loggers => [logger])
 end

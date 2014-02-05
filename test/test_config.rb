@@ -4,6 +4,7 @@ require File.expand_path('../../config/boot', __FILE__)
 require 'minitest/colorize'
 require 'minitest/spec'
 require 'minitest/autorun'
+require 'database_cleaner'
 
 class MiniTest::Unit::TestCase
   include Rack::Test::Methods
@@ -17,6 +18,9 @@ class MiniTest::Unit::TestCase
   #     set :foo, :bar
   #   end
   #
+
+  DatabaseCleaner[:sequel].strategy = :transaction
+
   def app(app = nil, &blk)
     @app ||= block_given? ? app.instance_eval(&blk) : app
     @app ||= Padrino.application

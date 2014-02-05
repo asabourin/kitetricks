@@ -27,12 +27,14 @@ gem 'rack-test', :require => 'rack/test', :group => 'test'
 gem 'minitest-colorize', :group => 'test'
 gem 'guard-minitest'
 gem 'rb-fsevent'
+gem 'database_cleaner'
 
 # Padrino Stable Gem
 gem 'padrino', '0.12.0.rc3'
 
 # Padrino plugins
 gem 'padrino-multi-json'
+gem 'padrino-jbuilder'
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'

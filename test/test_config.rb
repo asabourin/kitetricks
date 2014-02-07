@@ -1,9 +1,8 @@
 RACK_ENV = 'test' unless defined?(RACK_ENV)
 require File.expand_path('../../config/boot', __FILE__)
 
-require 'minitest/colorize'
 require 'minitest/spec'
-require 'minitest/autorun'
+require 'turn/autorun'
 require 'database_cleaner'
 
 class MiniTest::Unit::TestCase

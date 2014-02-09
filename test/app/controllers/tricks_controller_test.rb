@@ -10,14 +10,18 @@ describe "TricksController" do
 
   end
 
-  describe 'GET #index' do
-  
-    before do
-      get '/tricks'
-    end
+  describe "GET #index" do
 
-    it "should return all tricks" do
-      assert_equal "Jump", JSON.parse(last_response.body)[0]['name']
+    describe "when user not logged in" do
+    
+      before do
+        get '/tricks'
+      end
+
+      it "should return all tricks" do
+        assert_equal "Jump", JSON.parse(last_response.body)[0]['name']
+      end
+
     end
 
   end

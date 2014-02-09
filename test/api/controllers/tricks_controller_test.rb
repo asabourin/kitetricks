@@ -4,7 +4,9 @@ describe "TricksController" do
 
   before do 
 
+    app(Kitetricks::Api)
     DatabaseCleaner.start
+    
     @category = Category.create(:name => 'Freestyle')
     @trick = Trick.create(:name => 'Jump', :description => 'Fly high', :category => @category)
 

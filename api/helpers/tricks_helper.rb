@@ -1,6 +1,6 @@
 # Helper methods defined here can be accessed in any controller or view in the application
 
-Kitetricks::App.helpers do
+Kitetricks::Api.helpers do
   # def simple_helper_method
   #  ...
   # end

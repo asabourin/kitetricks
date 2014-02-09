@@ -33,4 +33,6 @@ Padrino.configure_apps do
 end
 
 # Mounts the core application for this project
-Padrino.mount('Kitetricks::App', :app_file => Padrino.root('app/app.rb')).to('/')
+
+Padrino.mount('Kitetricks::Api', :app_file => Padrino.root('api/app.rb')).to('/api')
+Padrino.mount('Kitetricks::Frontend', :app_file => Padrino.root('frontend/app.rb')).to('/')

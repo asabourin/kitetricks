@@ -1,4 +1,4 @@
-Kitetricks::App.controllers :tricks do
+Kitetricks::Api.controllers :tricks do
   
   get :index do
     @tricks = Trick.all

@@ -1,12 +1,8 @@
 module Kitetricks
-  class App < Padrino::Application
-    register SassInitializer
+  class Frontend < Padrino::Application
     register Padrino::Rendering
     register Padrino::Mailer
     register Padrino::Helpers
-    register Padrino::MultiJson
-
-    MultiJson.use :yajl
 
     enable :sessions
 

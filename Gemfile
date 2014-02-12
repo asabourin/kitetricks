@@ -31,7 +31,7 @@ gem 'rb-fsevent'
 gem 'database_cleaner'
 
 # Padrino Stable Gem
-gem 'padrino', '0.12.0.rc3'
+gem 'padrino', '0.12.0'
 
 # Padrino plugins
 gem 'padrino-multi-json'

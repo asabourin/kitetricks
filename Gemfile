@@ -36,6 +36,7 @@ gem 'padrino', '0.12.0'
 # Padrino plugins
 gem 'padrino-multi-json'
 gem 'padrino-jbuilder'
+gem 'padrino-sprockets'
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'

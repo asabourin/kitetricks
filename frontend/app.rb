@@ -5,6 +5,9 @@ module Kitetricks
     register Padrino::Helpers
     register SassInitializer
 
+    register Padrino::Sprockets
+    sprockets  # :url => 'assets', :root => app.root
+
     enable :sessions
 
     get "/" do

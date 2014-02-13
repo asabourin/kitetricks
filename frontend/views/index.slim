@@ -1,3 +1,13 @@
-.jumbotron
-  h1 Kitetricks
+html
+  
+  head
 
+    title Kitetricks
+
+    ==stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min', '//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css', 'frontend'
+    
+    ==javascript_include_tag 'application.js'
+
+  body ng-app="app"
+
+    ng-view

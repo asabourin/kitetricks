@@ -4,8 +4,7 @@ Sequel.migration do
       foreign_key :rider_id, :riders, :key => :id, :allow_null => false
       foreign_key :trick_id, :tricks, :key => :id, :allow_null => false
       primary_key [:rider_id, :trick_id]
-      Integer :level_left, :default => 0
-      Integer :level_right, :default => 0
+      Integer :level, :default => 0
     end
   end
 

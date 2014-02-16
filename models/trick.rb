@@ -5,4 +5,8 @@ class Trick < Sequel::Model
 
   plugin :association_dependencies, :riders=>:nullify
 
+  def level_for_rider(rider=nil)
+    0
+  end
+
 end

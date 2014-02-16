@@ -14,14 +14,30 @@ describe "TricksController" do
 
   describe "GET #index" do
 
-    describe "when user not logged in" do
+    describe "when rider not logged in" do
     
       before do
         get '/tricks'
       end
 
-      it "should return all tricks" do
+      it "should return all tricks with level 0" do
         assert_equal @trick.name, JSON.parse(last_response.body)[0]['name']
+        assert_equal 0, JSON.parse(last_response.body)[0]['level']
+      end
+
+    end
+
+    describe "when rider logged in with tricks saved" do
+    
+      before do
+        @rider = Rider.create(:username => 'antoine')
+        RidersTrick.create(:rider => @rider, :trick => @trick, :level => 1)
+        get '/tricks', {:rider_id => @rider.id}
+      end
+
+      it "should return all tricks with level 0" do
+        assert_equal @trick.name, JSON.parse(last_response.body)[0]['name']
+        assert_equal 1, JSON.parse(last_response.body)[0]['level']
       end
 
     end

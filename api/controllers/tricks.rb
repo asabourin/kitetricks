@@ -1,6 +1,7 @@
 Kitetricks::Api.controllers :tricks do
   
   get :index do
+    @rider_id = params[:rider_id]
     @tricks = Trick.order(:position)
     render 'tricks/index'
   end

@@ -3,6 +3,7 @@ Sequel.migration do
     create_table :categories do
       primary_key :id
       String :name
+      Text :description
     end
   end
 

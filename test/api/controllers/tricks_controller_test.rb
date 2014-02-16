@@ -21,9 +21,21 @@ describe "TricksController" do
       end
 
       it "should return all tricks" do
-        assert_equal "Jump", JSON.parse(last_response.body)[0]['name']
+        assert_equal @trick.name, JSON.parse(last_response.body)[0]['name']
       end
 
+    end
+
+  end
+
+  describe "GET #categories" do
+    
+    before do
+      get '/tricks/categories'
+    end
+
+    it "should return all categories" do
+      assert_equal @category.name, JSON.parse(last_response.body)[0]['name']
     end
 
   end

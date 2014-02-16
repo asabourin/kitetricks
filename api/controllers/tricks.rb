@@ -5,6 +5,11 @@ Kitetricks::Api.controllers :tricks do
     render 'tricks/index'
   end
 
+  get :categories do
+    @categories = Category.all
+    render 'tricks/categories'
+  end
+
   # get :sample, :map => '/sample/url', :provides => [:any, :js] do
   #   case content_type
   #     when :js then ...

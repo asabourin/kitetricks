@@ -5,6 +5,7 @@ guard :minitest do
 
   watch(%r{^test/test_config\.rb})      { 'test' }
   watch(%r{^test/(.*)test\.rb})
+  watch(%r{^models/(.+)\.rb})        { |m| "test/models/#{m[1]}_test.rb" }
   watch(%r{^api/controllers/(.+)\.rb})        { |m| "test/api/controllers/#{m[1]}_controller_test.rb" }
   watch(%r{^api/views/(.+)/(.+)\.jbuilder})        { |m| "test/api/controllers/#{m[1]}_controller_test.rb" }
 

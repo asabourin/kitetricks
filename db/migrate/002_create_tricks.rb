@@ -5,6 +5,7 @@ Sequel.migration do
       foreign_key :category_id
       String :name
       Text :description
+      Integer :position
     end
   end
 

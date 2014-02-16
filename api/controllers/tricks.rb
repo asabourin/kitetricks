@@ -1,7 +1,7 @@
 Kitetricks::Api.controllers :tricks do
   
   get :index do
-    @tricks = Trick.all
+    @tricks = Trick.order(:position)
     render 'tricks/index'
   end
 

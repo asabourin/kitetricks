@@ -29,13 +29,13 @@
             p.list-group-item-text
               | {{trick.description}}
           .btn-group.btn-group-justified
-            a.btn.btn-default type="button" ng-class="{'btn-danger': trick.level == '0'}" ng-model="trick.level" btn-radio="'0'" 
+            a.btn.btn-default type="button" ng-class="{'btn-danger': trick.level == '0'}" ng-model="trick.level" btn-radio="'0'" ng-change="updateTrickLevel(trick)"
               span.glyphicon.glyphicon-remove
               |  Never tried
-            a.btn.btn-default type="button" ng-class="{'btn-warning': trick.level == '1'}" ng-model="trick.level" btn-radio="'1'" 
+            a.btn.btn-default type="button" ng-class="{'btn-warning': trick.level == '1'}" ng-model="trick.level" btn-radio="'1'" ng-change="updateTrickLevel(trick)"
               span.glyphicon.glyphicon-cog
               |  Working on it
-            a.btn.btn-default type="button" ng-class="{'btn-success': trick.level == '2'}" ng-model="trick.level" btn-radio="'2'" 
+            a.btn.btn-default type="button" ng-class="{'btn-success': trick.level == '2'}" ng-model="trick.level" btn-radio="'2'" ng-change="updateTrickLevel(trick)"
               span.glyphicon.glyphicon-ok
               |  Nailing it
           br

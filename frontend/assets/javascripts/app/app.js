@@ -1,5 +1,5 @@
 
-angular.module('app', ['ngRoute', 'app.services', 'app.controllers', 'ui.bootstrap'])
+angular.module('app', ['ngRoute', 'ngResource', 'app.services', 'app.controllers', 'ui.bootstrap'])
 
 .config(['$locationProvider', function($locationProvider){
   $locationProvider.html5Mode(true);

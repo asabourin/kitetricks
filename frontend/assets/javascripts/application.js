@@ -5,5 +5,4 @@
 // the compiled file.
 //
 //= require ./angular/angular.js
-//= require ./angular/angular-route.js
 //= require_tree .

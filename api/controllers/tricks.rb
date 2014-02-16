@@ -11,19 +11,26 @@ Kitetricks::Api.controllers :tricks do
     render 'tricks/categories'
   end
 
-  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
+  post :level, :map => "/tricks/:id/level" do
+    
+    @trick = Trick[params[:id].to_i]
+    @rider = Rider[params[:rider_id].to_i]
+    @level = params[:level].to_i
+    
+    if @trick && @rider && @level
 
-  # get :foo, :with => :id do
-  #   'Maps to url '/foo/#{params[:id]}''
-  # end
+      if join = RidersTrick.first(:rider => @rider, :trick => @trick)
+        join.update(:level => @level)
+      else
+        RidersTrick.create(:rider => @rider, :trick => @trick, :level => @level)
+      end
+      
+      @trick.reload
+      @rider_id = @rider.id
+      render 'tricks/show'
+      
+    end
 
-  # get '/example' do
-  #   'Hello world!'
-  # end
-  
+  end
 
 end

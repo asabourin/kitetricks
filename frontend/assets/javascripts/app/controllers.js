@@ -17,4 +17,9 @@ angular.module('app.controllers', [])
     Tricks.level({trickId:trick.id, rider_id:1, level:trick.level})
   }
 
+  $scope.trickColor = function(trick) {
+    var classes = ['danger', 'warning', 'success']
+    return classes[trick.level]
+  }
+
 });

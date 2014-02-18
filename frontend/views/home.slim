@@ -21,21 +21,22 @@
           .sr-only 
             | {{percentage(category.id, 0)}}
 
-      .list-group
-        div ng-repeat="trick in tricks | filter:{category_id: category.id}"
-          .list-group-item
-            h4.list-group-item-heading
-              | {{trick.name}}
-            p.list-group-item-text
-              | {{trick.description}}
-          .btn-group.btn-group-justified
-            a.btn.btn-default type="button" ng-class="{'btn-danger': trick.level == '0'}" ng-model="trick.level" btn-radio="'0'" ng-change="updateTrickLevel(trick)"
-              span.glyphicon.glyphicon-remove
-              |  Never tried
-            a.btn.btn-default type="button" ng-class="{'btn-warning': trick.level == '1'}" ng-model="trick.level" btn-radio="'1'" ng-change="updateTrickLevel(trick)"
-              span.glyphicon.glyphicon-cog
-              |  Working on it
-            a.btn.btn-default type="button" ng-class="{'btn-success': trick.level == '2'}" ng-model="trick.level" btn-radio="'2'" ng-change="updateTrickLevel(trick)"
-              span.glyphicon.glyphicon-ok
-              |  Nailing it
-          br
+      .panel ng-repeat="trick in tricks | filter:{category_id: category.id}" ng-class="'panel-'+trickColor(trick)"
+        .panel-heading
+          h4.panel-title
+            | {{trick.name}}
+        .panel-body.media
+          a.pull-left href="#"
+            img.media-object alt="64x64" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZWVlIj48L3JlY3Q+PHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzIiIHk9IjMyIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEycHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9zdmc+" style="width: 64px; height: 64px;"
+          p
+            | {{trick.description}}
+        .btn-group.btn-group-justified
+          a.btn.btn-default ng-model="trick.level" btn-radio="0" ng-change="updateTrickLevel(trick)"
+            span.glyphicon.glyphicon-remove
+            |  Never tried
+          a.btn.btn-default  ng-model="trick.level" btn-radio="1" ng-change="updateTrickLevel(trick)"
+            span.glyphicon.glyphicon-cog
+            |  Working on it
+          a.btn.btn-default  ng-model="trick.level" btn-radio="2" ng-change="updateTrickLevel(trick)"
+            span.glyphicon.glyphicon-ok
+            |  Nailing it

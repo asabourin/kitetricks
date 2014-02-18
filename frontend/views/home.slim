@@ -1,5 +1,8 @@
 .container-fluid
 
+  .center-block ng-controller="authenticationCtrl"
+    button.btn.btn-primary.btn-large.center-block type="button" data-ng-show="!loggedIn" data-ng-click="login()" Login with Facebook
+
   .row
 
     .col-md-3 ng-repeat="category in categories"
@@ -9,17 +12,13 @@
           | {{category.name}}
           small 
             |  {{ (tricks|filter:{category_id: category.id}).length }} tricks
+      p.lead
+        | {{category.description}}
 
       .progress
         .progress-bar.progress-bar-success style="width: {{percentage(category.id, 2)}}%"
-          .sr-only 
-            | {{percentage(category.id, 2)}}
         .progress-bar.progress-bar-warning style="width: {{percentage(category.id, 1)}}%"
-          .sr-only 
-            | {{percentage(category.id, 1)}}
         .progress-bar.progress-bar-danger style="width: {{percentage(category.id, 0)}}%"
-          .sr-only 
-            | {{percentage(category.id, 0)}}
 
       .panel ng-repeat="trick in tricks | filter:{category_id: category.id}" ng-class="'panel-'+trickColor(trick)"
         .panel-heading
